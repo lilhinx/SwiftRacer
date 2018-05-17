@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Emc-EA-njD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Connection View Controller-->
+        <scene sceneID="ylH-CG-kjs">
+            <objects>
+                <viewController id="Emc-EA-njD" customClass="ConnectionViewController" customModule="TrackStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hSF-l8-lBd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rYZ-0a-l2C">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="1" green="0.63137254899999995" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rYZ-0a-l2C" firstAttribute="centerY" secondItem="hSF-l8-lBd" secondAttribute="centerY" id="F9G-Yw-Rm0"/>
+                            <constraint firstItem="rYZ-0a-l2C" firstAttribute="centerX" secondItem="hSF-l8-lBd" secondAttribute="centerX" id="if2-je-SyP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kbz-kh-jcy"/>
+                    </view>
+                    <connections>
+                        <segue destination="J4x-3R-bbQ" kind="presentation" identifier="Ready" id="pzr-Jj-qW1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Znj-lF-hBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52" y="152"/>
+        </scene>
+        <!--Control View Controller-->
+        <scene sceneID="SBg-8D-6vq">
+            <objects>
+                <viewController id="J4x-3R-bbQ" customClass="ControlViewController" customModule="TrackStar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HN3-9N-wYk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1500" minValue="1000" maxValue="2000" translatesAutoresizingMaskIntoConstraints="NO" id="9TU-ML-nr6">
+                                <rect key="frame" x="18" y="231" width="339" height="31"/>
+                                <connections>
+                                    <action selector="throttle_changed:" destination="J4x-3R-bbQ" eventType="valueChanged" id="m5R-Ce-12d"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Throttle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXu-VS-JS3">
+                                <rect key="frame" x="157" y="200" width="61" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="90" minValue="45" maxValue="135" translatesAutoresizingMaskIntoConstraints="NO" id="Ruh-m6-LQA">
+                                <rect key="frame" x="18" y="311" width="339" height="31"/>
+                                <connections>
+                                    <action selector="steering_changed:" destination="J4x-3R-bbQ" eventType="valueChanged" id="bRJ-Dh-Vvo"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steering" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVc-fg-bRg">
+                                <rect key="frame" x="155.5" y="280" width="64.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CXu-VS-JS3" firstAttribute="top" secondItem="RCR-kQ-WXG" secondAttribute="top" constant="180" id="1LA-u9-hht"/>
+                            <constraint firstItem="9TU-ML-nr6" firstAttribute="leading" secondItem="RCR-kQ-WXG" secondAttribute="leading" constant="20" id="5q0-Av-fCn"/>
+                            <constraint firstItem="CXu-VS-JS3" firstAttribute="centerX" secondItem="HN3-9N-wYk" secondAttribute="centerX" id="6uw-FT-zzu"/>
+                            <constraint firstItem="9TU-ML-nr6" firstAttribute="top" secondItem="CXu-VS-JS3" secondAttribute="bottom" constant="10" id="QZv-wv-oKi"/>
+                            <constraint firstItem="RCR-kQ-WXG" firstAttribute="trailing" secondItem="Ruh-m6-LQA" secondAttribute="trailing" constant="20" id="W0L-5L-1pn"/>
+                            <constraint firstItem="uVc-fg-bRg" firstAttribute="top" secondItem="9TU-ML-nr6" secondAttribute="bottom" constant="19" id="rfl-vl-9aM"/>
+                            <constraint firstItem="Ruh-m6-LQA" firstAttribute="top" secondItem="uVc-fg-bRg" secondAttribute="bottom" constant="10" id="sVl-oR-utG"/>
+                            <constraint firstItem="RCR-kQ-WXG" firstAttribute="trailing" secondItem="9TU-ML-nr6" secondAttribute="trailing" constant="20" id="wyY-o2-TVY"/>
+                            <constraint firstItem="uVc-fg-bRg" firstAttribute="centerX" secondItem="HN3-9N-wYk" secondAttribute="centerX" id="xWz-c9-KRQ"/>
+                            <constraint firstItem="Ruh-m6-LQA" firstAttribute="leading" secondItem="RCR-kQ-WXG" secondAttribute="leading" constant="20" id="xru-fG-oRH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RCR-kQ-WXG"/>
+                    </view>
+                    <connections>
+                        <segue destination="eYh-rK-h45" kind="unwind" identifier="Disconnect" unwindAction="exitWithSegue:" id="wdp-o2-dmz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1F-BX-VkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eYh-rK-h45" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="152"/>
+        </scene>
+    </scenes>
+</document>
